@@ -5,12 +5,12 @@ services:
     build: ./API-Golang
     command: go run app.go
     volumes:
-     - ./API-Golang:/app
+     - ./API-Golang:/go/src/github.com/Gujarats/API-Golang
     ports:
       - "8080:8080"
     depends_on:
-      - db
       - redis
+      - db
     links :
       - redis
       - db
